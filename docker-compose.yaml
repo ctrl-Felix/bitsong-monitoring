@@ -1,0 +1,19 @@
+version: '3'
+services:
+  api:
+    image: ctrlfelix/bitsong-delegation-dao-api:v0.0.1
+    env_file:
+      - ./.env
+    build:
+      context: ./
+      dockerfile: ./api/Dockerfile
+    ports:
+     - "5000:5000"
+  monitoring:
+    image: ctrlfelix/bitsong-delegation-dao-monitoring:v0.0.1
+    env_file:
+      - ./.env
+    build:
+      context: ./
+      dockerfile: ./monitoring/Dockerfile
+
