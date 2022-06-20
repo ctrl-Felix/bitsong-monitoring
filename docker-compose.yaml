@@ -3,7 +3,7 @@ services:
   api:
     image: ctrlfelix/bitsong-delegation-dao-api:v0.0.1
     env_file:
-      - ./.env
+      - .env.prod
     build:
       context: ./
       dockerfile: ./api/Dockerfile
@@ -12,7 +12,7 @@ services:
   monitoring:
     image: ctrlfelix/bitsong-delegation-dao-monitoring:v0.0.1
     env_file:
-      - ./.env
+      - .env.prod
     build:
       context: ./
       dockerfile: ./monitoring/Dockerfile
